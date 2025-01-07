@@ -3,12 +3,15 @@ import { NextRequest, NextResponse } from 'next/server';
 export function middleware(req: NextRequest) {
   const url = req.nextUrl.clone();
 
-  // Public route (allow without redirection)
-  if (url.pathname === '/') {
+  // Define public routes
+  const publicRoutes = ['/', '/help', '/settings'];
+
+  // Allow access to public routes
+  if (publicRoutes.includes(url.pathname)) {
     return NextResponse.next();
   }
 
-  // Simulate authentication check (replace this with your actual logic)
+  // Check authentication cookie
   const isAuthenticated = req.cookies.get('auth0.is.authenticated');
   if (!isAuthenticated) {
     console.log('Redirecting unauthenticated user');
@@ -20,5 +23,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/protected-route', '/profile', '/dashboard'], // Protect only specific routes
+  matcher: [], // Protect only specific routes
 };

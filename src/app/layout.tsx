@@ -1,6 +1,6 @@
 import './globals.css';
-import UserProviderWrapper from '@/components/UserProviderWrapper'; // Client wrapper for UserProvider
-import Navbar from '@/components/Navbar'; // Navbar
+import UserProviderWrapper from '@/components/common/UserProviderWrapper'; // Client wrapper for UserProvider
+import Navbar from '@/components/common/Navbar'; // Navbar
 
 export const metadata = {
   title: 'Leela',
@@ -15,10 +15,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <UserProviderWrapper>
-          <Navbar />
+        {/* <UserProviderWrapper>
+          <Navbar /> */}
           {children}
-        </UserProviderWrapper>
+        {/* </UserProviderWrapper> */}
       </body>
     </html>
   );
