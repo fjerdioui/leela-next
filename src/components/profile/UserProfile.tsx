@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserProfile as UserProfileType } from '@/types/profile';
+import { Profile as UserProfileType } from '@/types/profile';
 import Gallery from './Gallery';
 import FollowStats from './FollowStats';
 

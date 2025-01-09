@@ -1,4 +1,4 @@
-export interface UserProfile {
+export interface Profile {
     id: string;
     name: string;
     profilePicture?: string; // URL of the profile picture
